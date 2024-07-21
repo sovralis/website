@@ -7,6 +7,8 @@ use tracing::Level;
 enum Route {
     #[route("/")]
     Home {},
+    #[route("/about")]
+    About {},
     #[route("/blog/:id")]
     Blog { id: i32 },
 }
@@ -19,7 +21,26 @@ fn main() {
 
 fn App() -> Element {
     rsx! {
-        Router::<Route> {}
+        div {
+            Router::<Route> {}
+        }
+    }
+}
+
+#[component]
+fn About() -> Element {
+    rsx! {
+        div {
+            h1 { "Welcome to Sovralis" }
+            p { "Sovralis is the vanguard of web3, a groundbreaking project launched from the grassroots." }
+            h2 { "Key Features:" }
+            ul {
+                li { "Coordination Layer: Our first release focuses on revolutionizing decentralized coordination." }
+                li { "Anonymous and Grassroots: Built from the ground up, as it should be." }
+                li { "Fair Token Distribution: No token sales - all tokens are mined through network participation." }
+            }
+            p { "Join us in shaping the future of decentralized networks!" }
+        }
     }
 }
 
@@ -33,19 +54,11 @@ fn Blog(id: i32) -> Element {
 
 #[component]
 fn Home() -> Element {
-    let mut count = use_signal(|| 0);
-
     rsx! {
-        Link {
-            to: Route::Blog {
-                id: count()
-            },
-            "Go to blog"
-        }
         div {
-            h1 { "High-Five counter: {count}" }
-            button { onclick: move |_| count += 1, "Up high!" }
-            button { onclick: move |_| count -= 1, "Down low!" }
+            h1 { "Sovralis: The Future of Web3" }
+            p { "Welcome to Sovralis, the revolutionary coordination layer for the decentralized web." }
+            Link { to: Route::About {}, "Learn More" }
         }
     }
 }
