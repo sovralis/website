@@ -62,3 +62,13 @@ fn Home() -> Element {
         }
     }
 }
+
+#[component]
+fn Dashboard() -> Element {
+    rsx! {
+        div {
+            h1 { "Dashboard" }
+        }
+    }
+
+}

@@ -1,0 +1,60 @@
+body {
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #00ff00;
+    border-bottom: 1px solid #00ff00;
+    padding-bottom: 10px;
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li::before {
+    content: "> ";
+    color: #00ff00;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #111;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+}
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
