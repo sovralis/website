@@ -55,7 +55,9 @@ fn Nav() -> Element {
 
        Logo {}
 
-       Outlet::<Route> {}
+       div { id: "main-content",
+           Outlet::<Route> {}
+       }
 
        Footer {}
     }
@@ -67,10 +69,16 @@ fn Footer() -> Element {
         footer {
             class: "footer",
             p {
-                "Sovralis is created by Sovralis Collective, a group of visionaries dedicated to building the primitives and education necessary for the transition from the server-client Web2 model to a decentralized Web3 paradigm. We're reimagining big applications as peer-to-peer components/cells, paving the way for a truly decentralized digital future."
+                "Building the primitives for the transition to decentralized Web3."
             }
             p {
-                "Made with ❤️ by "
+                "Made with "
+                span {
+                    class: "heart-icon",
+                    style: "color: red;",
+                    "❤️"
+                }
+                " by "
                 a {
                     href: "#",
                     "Sovralis Collective"
