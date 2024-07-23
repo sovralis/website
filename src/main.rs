@@ -18,6 +18,8 @@ enum Route {
     Channels {},
     #[route("/blockchain-arbitration")]
     BlockchainArbitration {},
+    #[route("/tokenomy")]
+    Tokenomy {},
     #[end_layout]
 
     // Finally, we need to handle the 404 page
@@ -42,6 +44,7 @@ fn Nav() -> Element {
             Link { to: Route::Home {}, "HOME" }
             Link { to: Route::Litepaper {}, "LITEPAPER" }
             Link { to: Route::Dashboard {}, "DASHBOARD" }
+            Link { to: Route::Tokenomy {}, "TOKENOMY" }
        }
 
        Logo {}
@@ -91,6 +94,66 @@ fn Channels() -> Element {
 }
 
 #[component]
+fn Tokenomy() -> Element {
+    rsx! {
+        div {
+            h1 { "Sovralis Tokenomy" }
+            p { "The Sovralis tokenomy is designed to be fair, transparent, and aligned with the principles of true decentralization. Our approach is inspired by the original Bitcoin launch, emphasizing fairness, decentralization, and community participation." }
+            
+            h2 { "Ethical Fair Launch" }
+            p { "Our ethical fair launch ensures that everyone has an equal opportunity to participate and earn tokens. There are no pre-mines, no ICOs, and no special allocations. Every token in circulation is earned through active contribution to the network, promoting a truly decentralized and fair ecosystem." }
+
+
+            h2 { "Initial Funding Stage" }
+            p { "To ensure the continuity and development of the Sovralis project, an initial funding stage has been implemented:" }
+            ul {
+                li { "The first validator slots can be purchased at a reasonable price to seed initial development." }
+                li { "It allows early supporters to secure their position in the network." }
+            }
+            
+            h2 { "Proof of Participation" }
+            p { "Tokens are generated based on proof of participation in the foundational layer of Sovralis. This means that users are rewarded for their active involvement in maintaining and growing the network." }
+            
+            h2 { "Token Generation" }
+            ul {
+                li { "Tokens are mined by running foundational network layers, similar to Bitcoin's mining process." }
+                li { "All coordination and communication within the network have a cost, which is paid in tokens." }
+                li { "The more a user participates in network activities, the more tokens they can earn." }
+            }
+            
+            h2 { "Token Utility" }
+            p { "Sovralis tokens serve multiple purposes within the ecosystem:" }
+            ul {
+                li { "Network Fees: Used to pay for coordination and communication costs." }
+                li { "Governance: Token holders can participate in network governance decisions." }
+                li { "Staking: Users can stake tokens to become validators or delegate to validators." }
+                li { "Incentives: Rewards for network participants who contribute to the ecosystem's growth and security." }
+                li { "Collateral: Required to set up channels and ensure correct behavior in the network." }
+                li { "Cross-Chain Exchange: Facilitates truly decentralized cross-chain exchanges based on channels and atomic swaps." }
+            }
+            p { "The use of Sovralis tokens as collateral is crucial for maintaining the integrity of the network:" }
+            ul {
+                li { "Channel Setup: Users must lock tokens as collateral when opening multi-party channels, ensuring commitment to the channel's operations." }
+                li { "Behavior Incentive: The locked collateral serves as an incentive for correct behavior, as malicious actions can result in loss of the staked tokens." }
+                li { "Cross-Chain AMM: For our decentralized cross-chain exchange, we employ a model similar to THORChain, where AMM participants are required to hold an equivalent value of Sovralis tokens as the assets they provide to the liquidity pool. This ensures balanced liquidity and aligns incentives across different blockchain networks." }
+            }
+            
+            p { "This initial funding mechanism is designed to bootstrap the project while maintaining alignment with our principles of fairness and decentralization." }
+
+            h2 { "Sustainable Economics" }
+            p { "The Sovralis tokenomy is designed to create a sustainable economic model that:" }
+            ul {
+                li { "Encourages long-term participation and investment in the network." }
+                li { "Balances token generation with token usage to maintain a healthy economy." }
+                li { "Adapts to network growth and changing conditions through governance mechanisms." }
+            }
+            
+            p { "By tying token generation to actual participation and contribution, Sovralis ensures that the value created within the ecosystem is fairly distributed to those who help build and maintain it. This approach, combined with the initial funding stage, aligns incentives and promotes the long-term health and growth of the network." }
+        }
+    }
+}
+
+#[component]
 fn Logo() -> Element {
     rsx! {
         svg { 
@@ -109,15 +172,6 @@ fn Logo() -> Element {
                 tspan { x: "10", dy: "20", "░╚═══██╗██║░░██║░╚████╔╝░██╔══██╗██╔══██║██║░░░░░██║░╚═══██╗" }
                 tspan { x: "10", dy: "20", "██████╔╝╚█████╔╝░░╚██╔╝░░██║░░██║██║░░██║███████╗██║██████╔╝" }
                 tspan { x: "10", dy: "20", "╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚═╝╚═════╝░" }
-            }
-            text {
-                x: "400",
-                y: "150",
-                fill: "white",
-                "font-family": "monospace",
-                "font-size": "16",
-                "text-anchor": "middle",
-                "The Vanguard of Web3"
             }
         }
     }
@@ -145,8 +199,10 @@ fn Home() -> Element {
                 li { "Fair Launch: Tokens are mined by running foundational network layers, similar to Bitcoin's philosophy." }
                 li { "Scalable Coordination Layer: Revolutionizing decentralized coordination." }
                 li { "Grassroots Approach: Built from the ground up, ensuring true decentralization." }
+                li { "Ethical Fair Launch: Contribution is rewarded, and tokens can only be earned through participation." }
             }
             p { "Join us in creating a scalable, ethical foundation for the future of decentralized networks!" }
+
         }
     }
 }
@@ -161,11 +217,11 @@ fn Litepaper() -> Element {
             
             h2 { "Core Layers" }
             
-            h3 { "1. Nexus Layer" }
+            h3 { "1. Sovralis Nexus" }
             p { "The foundation of Sovralis is our innovative Nexus Layer. This layer facilitates seamless interaction and synchronization between different blockchain networks and off-chain systems. It acts as a decentralized orchestrator, enabling complex multi-chain operations and enhancing overall network efficiency. " }
             Link { to: Route::Nexus {}, "Learn more about the Nexus Layer" }
             
-            h3 { "2. Channels" }
+            h3 { "2. Sovralis Channels" }
             p { "Building upon the concept of payment channels, Sovralis introduces advanced multi-party channels. These channels can be thought of as 'Lightning Network on steroids', allowing for:"}
             ul {
                 li { "Instant, low-cost transactions between multiple parties" }
@@ -175,8 +231,8 @@ fn Litepaper() -> Element {
             }
             Link { to: Route::Channels {}, "Learn more about Channels" }
             
-            h3 { "3. Blockchain Arbitration" }
-            p { "The third layer of Sovralis is not a specific blockchain, but rather a protocol that allows any existing blockchain to function as an arbiter. This approach ensures:"}
+            h3 { "3. Sovralis Arbitration" }
+            p { "The third component of Sovralis is not a specific blockchain, but rather a protocol that allows any existing blockchain to function as an arbiter. This approach ensures:"}
             ul {
                 li { "Maximum flexibility and future-proofing" }
                 li { "Ability to leverage the security and features of established blockchains" }
@@ -227,7 +283,7 @@ fn Nexus() -> Element {
                 }
                 li { 
                     strong { "Public Key Addressing: " }
-                    "Every participant is reachable via their unique public key address, simplifying secure communication."
+                    "Every participant/service is reachable via their unique public key address, simplifying secure communication."
                 }
                 li { 
                     strong { "End-to-End Encryption: " }
@@ -241,7 +297,7 @@ fn Nexus() -> Element {
             
             h2 { "How It Works" }
             p { "The Nexus Layer acts as a decentralized coordination mechanism, allowing parties to find each other and establish secure connections. Here's a brief overview of its operation:" }
-            ol {
+            ul {
                 li { "When a user joins the network, they generate a unique public-private key pair." }
                 li { "The public key serves as the user's address on the network." }
                 li { "To communicate, users leverage the onion-routing protocol, which encrypts messages in layers and routes them through multiple nodes." }
