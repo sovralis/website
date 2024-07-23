@@ -45,11 +45,38 @@ fn Nav() -> Element {
             Link { to: Route::Litepaper {}, "LITEPAPER" }
             Link { to: Route::Dashboard {}, "DASHBOARD" }
             Link { to: Route::Tokenomy {}, "TOKENOMY" }
+            a {
+                href: "https://github.com/sovralis",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "GITHUB"
+            }
        }
 
        Logo {}
 
        Outlet::<Route> {}
+
+       Footer {}
+    }
+}
+
+#[component]
+fn Footer() -> Element {
+    rsx! {
+        footer {
+            class: "footer",
+            p {
+                "Sovralis is created by Sovralis Collective, a group of visionaries dedicated to building the primitives and education necessary for the transition from the server-client Web2 model to a decentralized Web3 paradigm. We're reimagining big applications as peer-to-peer components/cells, paving the way for a truly decentralized digital future."
+            }
+            p {
+                "Made with ❤️ by "
+                a {
+                    href: "#",
+                    "Sovralis Collective"
+                }
+            }
+        }
     }
 }
 
