@@ -14,6 +14,8 @@ enum Route {
     Dashboard {},
     #[route("/nexus")]
     Nexus {},
+    #[route("/channels")]
+    Channels {},
     #[end_layout]
 
     // Finally, we need to handle the 404 page
@@ -41,6 +43,46 @@ fn Nav() -> Element {
        }
 
         Outlet::<Route> {}
+    }
+}
+
+#[component]
+fn Channels() -> Element {
+    rsx! {
+        div {
+            h1 { "Channels: The Scalability Solution of Sovralis" }
+            p { "Channels in Sovralis are an advanced implementation of the Lightning Network concept, optimized for multi-party interactions and complex state management." }
+            
+            h2 { "Understanding Lightning Channels" }
+            p { "Lightning channels, originally designed for Bitcoin, allow two parties to conduct multiple transactions off-chain, only settling the final balance on the blockchain. This significantly reduces transaction fees and increases throughput." }
+            
+            h2 { "Sovralis Channel Optimizations" }
+            ul {
+                li { "Multi-Party Support: Unlike traditional two-party channels, Sovralis channels can involve multiple participants." }
+                li { "Complex State Management: Beyond simple value transfers, our channels can manage complex application states." }
+                li { "Cross-Chain Compatibility: Channels can operate across different blockchain networks." }
+            }
+            
+            h2 { "The Killer Feature: Minimal Blockchain Interaction" }
+            p { "The most significant advantage of Sovralis channels is that blockchain interaction is only required when disputes need to be resolved. This design choice leads to:" }
+            ul {
+                li { "Dramatically Increased Scalability: Millions of transactions can occur off-chain." }
+                li { "Reduced Costs: Fewer on-chain transactions mean lower fees." }
+                li { "Near-Instant Finality: Off-chain transactions are almost instantaneous." }
+                li { "Web2-Level Performance: The system can handle the same transaction volume as centralized Web2 systems." }
+            }
+            
+            h2 { "How It Works" }
+            ol {
+                li { "Participants open a channel by locking funds in a smart contract." }
+                li { "Transactions and state changes occur off-chain, signed by all relevant parties." }
+                li { "The latest agreed-upon state is always ready to be submitted to the blockchain." }
+                li { "If a dispute arises, the most recent valid state is submitted to the blockchain for resolution." }
+                li { "When all parties agree, the channel can be closed, settling the final state on-chain." }
+            }
+            
+            p { "By leveraging these advanced channel mechanisms, Sovralis achieves the scalability of Web2 systems while maintaining the security and decentralization benefits of blockchain technology." }
+        }
     }
 }
 
@@ -129,6 +171,7 @@ fn Litepaper() -> Element {
                 li { "Cross-chain interoperability" }
                 li { "Scalable off-chain computation with on-chain security guarantees" }
             }
+            Link { to: Route::Channels {}, "Learn more about Channels" }
             
             h3 { "3. Blockchain Arbitration" }
             p { "The third layer of Sovralis is not a specific blockchain, but rather a protocol that allows any existing blockchain to function as an arbiter. This approach ensures:"}
