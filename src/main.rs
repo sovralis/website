@@ -10,8 +10,6 @@ enum Route {
     Home {},
     #[route("/litepaper")]
     Litepaper {},
-    #[route("/dashboard")]
-    Dashboard {},
     #[route("/nexus")]
     Nexus {},
     #[route("/channels")]
@@ -43,7 +41,12 @@ fn Nav() -> Element {
             class: "centered-nav",
             Link { to: Route::Home {}, "HOME" }
             Link { to: Route::Litepaper {}, "LITEPAPER" }
-            Link { to: Route::Dashboard {}, "DASHBOARD" }
+            a {
+                href: "https://discord.gg/ktvzBfjd",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "DISCORD"
+            }
             Link { to: Route::Tokenomy {}, "TOKENOMY" }
             a {
                 href: "https://github.com/sovralis",
@@ -290,14 +293,6 @@ fn Litepaper() -> Element {
     }
 }
 
-#[component]
-fn Dashboard() -> Element {
-    rsx! {
-        div {
-            h1 { "Dashboard" }
-        }
-    }
-}
 
 #[component]
 fn Nexus() -> Element {
