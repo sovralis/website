@@ -16,6 +16,8 @@ enum Route {
     Nexus {},
     #[route("/channels")]
     Channels {},
+    #[route("/blockchain-arbitration")]
+    BlockchainArbitration {},
     #[end_layout]
 
     // Finally, we need to handle the 404 page
@@ -42,7 +44,9 @@ fn Nav() -> Element {
             Link { to: Route::Dashboard {}, "DASHBOARD" }
        }
 
-        Outlet::<Route> {}
+       Logo {}
+
+       Outlet::<Route> {}
     }
 }
 
@@ -132,9 +136,8 @@ fn App() -> Element {
 fn Home() -> Element {
     rsx! {
         div {
-            Logo {}
 
-            h2 { "Welcome to Sovralis" }
+            h1 { "Welcome to Sovralis" }
             p { "Sovralis is a realistic, down-to-earth approach to building the foundation layer of web3, solving scalability issues present in other designs." }
             h2 { "Key Features:" }
             ul {
@@ -153,8 +156,7 @@ fn Home() -> Element {
 fn Litepaper() -> Element {
     rsx! {
         div {
-            Logo {}
-            h2 { "Introduction" }
+            h1 { "Sovralis Litepaper" }
             p { "Sovralis is a revolutionary project that aims to redefine the landscape of Web3 by introducing a set of powerful primitives. Our vision is to create a more efficient, scalable, and interoperable decentralized ecosystem." }
             
             h2 { "Core Layers" }
@@ -180,6 +182,7 @@ fn Litepaper() -> Element {
                 li { "Ability to leverage the security and features of established blockchains" }
                 li { "True interoperability across the entire blockchain ecosystem" }
             }
+            Link { to: Route::BlockchainArbitration {}, "Learn more about Blockchain Arbitration" }
             
             h2 { "Key Features and Benefits" }
             ul {
@@ -267,5 +270,52 @@ fn PageNotFound(route: Vec<String>) -> Element {
         h1 { "Page not found" }
         p { "We are terribly sorry, but the page you requested doesn't exist." }
         pre { color: "red", "log:\nattemped to navigate to: {route:?}" }
+    }
+}
+#[component]
+fn BlockchainArbitration() -> Element {
+    rsx! {
+        div {
+            h1 { "Blockchain Arbitration: Trust in Sovralis" }
+            p { "Blockchain Arbitration in Sovralis serves as the ultimate layer of trust and conflict resolution, enabling efficient off-chain operations while maintaining on-chain security guarantees." }
+            
+            h2 { "Multi-Party Channels and Off-Chain State Progression" }
+            p { "In Sovralis, multi-party channels allow for complex interactions and state changes to occur off-chain. Here's how it works:" }
+            ol {
+                li { "Participants open a multi-party channel by locking collateral in a smart contract on the arbitration blockchain." }
+                li { "State changes and transactions occur off-chain, signed by all relevant parties." }
+                li { "The latest agreed-upon state is always ready to be submitted to the blockchain if needed." }
+                li { "Participants can update the state as frequently as needed without interacting with the blockchain." }
+                li { "If a dispute arises, any participant can submit the most recent valid state to the arbitration blockchain for resolution." }
+            }
+            
+            h2 { "Delegated Proof of Stake Off-Chain" }
+            p { "Sovralis implements a unique approach to Delegated Proof of Stake (DPoS) that allows for off-chain state progression:" }
+            ul {
+                li { "Stake delegation and validator selection occur on-chain initially." }
+                li { "Validators operate off-chain, processing transactions and updating the state." }
+                li { "Periodic checkpoints of the off-chain state are submitted to the arbitration blockchain." }
+                li { "The system ensures correct behavior through economic incentives and the threat of punishment." }
+            }
+            
+            h2 { "Enforcing Correct Behavior" }
+            p { "To maintain the integrity of the off-chain operations, Sovralis employs several mechanisms:" }
+            ul {
+                li { "Stake Slashing: participants who act maliciously or fail to perform their duties can have their stake slashed." }
+                li { "Challenge Periods: After each checkpoint submission, there's a period where any participant can challenge the validity of the state." }
+                li { "Fraud Proofs: In case of disputes, participants can submit fraud proofs to the arbitration blockchain, demonstrating invalid state transitions." }
+                li { "Incentive Alignment: Rewards for honest behavior and severe penalties for dishonest actions create a strong economic incentive for correct operation." }
+            }
+            
+            h2 { "Benefits of This Approach" }
+            ul {
+                li { "Scalability: Most operations occur off-chain, allowing for high throughput and low latency." }
+                li { "Cost-Efficiency: Minimal on-chain transactions reduce gas costs significantly." }
+                li { "Security: The arbitration blockchain serves as a secure fallback in case of disputes." }
+                li { "Flexibility: The system can adapt to various consensus mechanisms and blockchain platforms." }
+            }
+            
+            p { "By leveraging blockchain arbitration and off-chain state progression, Sovralis achieves the scalability of centralized systems while maintaining the security and trustlessness of blockchain technology." }
+        }
     }
 }
