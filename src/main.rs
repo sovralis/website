@@ -91,15 +91,17 @@ fn Home() -> Element {
     rsx! {
         div {
             Logo {}
-            h1 { "Welcome to Sovralis" }
-            p { "Sovralis is the vanguard of web3, a groundbreaking project launched from the grassroots." }
+
+            h2 { "Welcome to Sovralis" }
+            p { "Sovralis is a realistic, down-to-earth approach to building the foundation layer of web3, solving scalability issues present in other designs." }
             h2 { "Key Features:" }
             ul {
-                li { "Coordination Layer: Our first release focuses on revolutionizing decentralized coordination." }
-                li { "Anonymous and Grassroots: Built from the ground up, as it should be." }
-                li { "Fair Token Distribution: No token sales - all tokens are mined through network participation." }
+                li { "Ethical Development: Built by anonymous builders in the true spirit of web3." }
+                li { "Fair Launch: Tokens are mined by running foundational network layers, similar to Bitcoin's philosophy." }
+                li { "Scalable Coordination Layer: Revolutionizing decentralized coordination." }
+                li { "Grassroots Approach: Built from the ground up, ensuring true decentralization." }
             }
-            p { "Join us in shaping the future of decentralized networks!" }
+            p { "Join us in creating a scalable, ethical foundation for the future of decentralized networks!" }
         }
     }
 }
