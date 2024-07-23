@@ -1,34 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
-.courier-prime-regular {
-  font-family: "Courier Prime", monospace;
+* {
+  font-family: "Anonymous Pro", monospace;
   font-weight: 400;
   font-style: normal;
 }
 
-.courier-prime-bold {
-  font-family: "Courier Prime", monospace;
+
+.anonymous-pro-regular {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.anonymous-pro-bold {
+  font-family: "Anonymous Pro", monospace;
   font-weight: 700;
   font-style: normal;
 }
 
-.courier-prime-regular-italic {
-  font-family: "Courier Prime", monospace;
+.anonymous-pro-regular-italic {
+  font-family: "Anonymous Pro", monospace;
   font-weight: 400;
   font-style: italic;
 }
 
-.courier-prime-bold-italic {
-  font-family: "Courier Prime", monospace;
+.anonymous-pro-bold-italic {
+  font-family: "Anonymous Pro", monospace;
   font-weight: 700;
   font-style: italic;
 }
+
 
 body {
     background-color: #0a0a0a;
     color: #00ff00;
-    font-family: 'Courier New', monospace;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
