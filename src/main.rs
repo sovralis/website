@@ -54,6 +54,12 @@ fn Nav() -> Element {
                 rel: "noopener noreferrer",
                 "GITHUB"
             }
+            a {
+                href: "https://app.radicle.xyz/nodes/seed.radicle.garden/rad:z2VdjHC4RXyTULWZx4SHz8TCkW4rb",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "RADICLE"
+            }
        }
 
        Logo {}

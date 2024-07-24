@@ -7,6 +7,9 @@ dx serve --hot-reload
 ```
 
 - Open the browser to http://localhost:8080
+
+
+
 # Sovralis
 
 Sovralis is a groundbreaking project designed to serve as the vanguard of web3, focusing on providing a robust coordination layer for decentralized applications. This project is a grassroots initiative, launched anonymously to ensure that the focus remains on the technology and community rather than any individual or entity.
@@ -24,3 +27,10 @@ The first release of Sovralis will introduce a coordination layer that will enab
 To participate in the Sovralis network and mine tokens, you will need to run a node and contribute to the network's security and stability. Details on how to set up a node and participate in the network will be available closer to the launch date.
 
 Stay tuned for more updates and join the Sovralis community to be part of the future of web3.
+
+## Radicle
+
+Following web3 principles, we invite you to explore our Radicle repository.
+
+- [Radicle](https://app.radicle.xyz/nodes/seed.radicle.garden/rad:z2VdjHC4RXyTULWZx4SHz8TCkW4rb)
+
