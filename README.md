@@ -8,8 +8,6 @@ dx serve --hot-reload
 
 - Open the browser to http://localhost:8080
 
-
-
 # Sovralis
 
 Sovralis is a groundbreaking project designed to serve as the vanguard of web3, focusing on providing a robust coordination layer for decentralized applications. This project is a grassroots initiative, launched anonymously to ensure that the focus remains on the technology and community rather than any individual or entity.
